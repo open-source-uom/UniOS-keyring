@@ -1,0 +1,11 @@
+post_upgrade() {
+	if usr/bin/pacman-key --lkey >/dev/null 2>&1; then
+		usr/bin/pacman-key --populate unios
+	else
+		echo ">>> Activate pacman-key running `pacman-key --init`."
+	fi
+}
+
+post_install() {
+	post_upgrade
+}
