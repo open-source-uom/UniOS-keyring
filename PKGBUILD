@@ -10,6 +10,7 @@ license=('GPL-3.0-or-later')
 install=unios-keyring.install
 source=(
   'chalis-unios.gpg'
+  'build-unios.gpg'
   'unios-trusted'
   'unios-revoke'
 )
@@ -23,6 +24,7 @@ package() {
   install -d "${pkgdir}/usr/share/pacman/keyrings"
 
   install -m644 "${srcdir}/chalis-unios.gpg" "${pkgdir}/usr/share/pacman/keyrings/chalis-unios.gpg"
+  install -m644 "${srcdir}/build-unios.gpg" "${pkgdir}/usr/share/pacman/keyrings/build-unios.gpg"
   install -m644 "${srcdir}/unios-trusted" "${pkgdir}/usr/share/pacman/keyrings/unios-trusted"
   install -m644 "${srcdir}/unios-revoke" "${pkgdir}/usr/share/pacman/keyrings/unios-revoked"
 }
